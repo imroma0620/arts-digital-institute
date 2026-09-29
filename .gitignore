@@ -1,0 +1,13 @@
+Thumbs.db
+Desktop.ini
+.DS_Store
+node_modules/
+.vercel/
+*.log
+_verificar*
+_ban-*
+_mov-*
+_cinta*
+_logo*
+_formacion*
+_cierre*

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arts Digital Institute</title>
+  <meta name="description" content="Cursos certificados por Autodesk en Revit, BIM y AutoCAD. Arts Digital Institute, centro autorizado en Florida, USA.">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,800;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera-interior">
+      <a class="logo" href="#inicio">
+        <img src="img/LOGO%20ARTS.png" alt="Arts Digital Institute" width="2250" height="1162">
+      </a>
+
+      <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <svg class="icono-abrir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+        <svg class="icono-cerrar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+        <span class="sr">Menú</span>
+      </button>
+
+      <nav id="menu-principal" class="nav" aria-label="Principal">
+        <a href="#areas">Cursos</a>
+        <a href="#cierre">Contacto</a>
+      </nav>
+
+      <div class="cabecera-acciones">
+        <button class="icono-boton" type="button" data-panel="carrito" aria-label="Carrito">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 7h12l-1 13H7L6 7z"/>
+            <path d="M9 7V6a3 3 0 0 1 6 0v1"/>
+          </svg>
+          <span class="carrito-cuenta" hidden>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <noscript>
+      <p class="contenedor aviso-js">Para ver los cursos, el calendario y el carrito, activa JavaScript.</p>
+    </noscript>
+
+    <section id="inicio" class="banners" aria-roledescription="carrusel" aria-label="Banners de inicio" tabindex="0">
+      <div class="banners-ventana">
+        <div class="banners-pista">
+          <article class="banner banner-foto activa" aria-hidden="false">
+            <picture>
+              <source media="(max-width: 700px)" srcset="img/banners/banner-1-movil.png">
+              <img class="banner-fondo" src="img/banners/banner_1-desk.png" alt="">
+            </picture>
+            <div class="contenedor banner-interior">
+              <div class="banner-copia">
+                <p class="etiqueta">Autodesk Authorized Training Center</p>
+                <h1 class="banner-titulo">Cursos Certificados por Autodesk</h1>
+                <p class="subtitulo">Estándares Globales de Innovación</p>
+                <p class="banner-texto">Domina el futuro del diseño arquitectónico y la ingeniería digital. Formación de élite en <strong>Revit, BIM y AutoCAD</strong> con instructores certificados y validez internacional inmediata.</p>
+                <div class="acciones">
+                  <a class="boton" href="#calendario">Próximas fechas</a>
+                  <a class="boton boton-secundario" href="#lanzamientos">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M8 6.5v11l10-5.5-10-5.5z"/>
+                    </svg>
+                    Cursos prácticos
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="banner banner-claro" aria-hidden="true">
+            <picture>
+              <source media="(max-width: 700px)" srcset="img/banners/banner-2-mobile.png">
+              <img class="banner-fondo" src="img/banners/banner-2-desk.png" alt="">
+            </picture>
+            <div class="contenedor banner-interior">
+              <div class="banner-copia">
+                <p class="etiqueta">Nuevos lanzamientos</p>
+                <h2 class="banner-titulo">Explora nuevas tecnologías</h2>
+                <p class="subtitulo">Amplía tus posibilidades con los próximos inicios.</p>
+                <p class="banner-texto">Revit, AutoCAD y Navisworks abren fechas desde el 15 de enero. Clases online en vivo, con certificación internacional.</p>
+                <div class="acciones">
+                  <a class="boton" href="#calendario">Próximas fechas</a>
+                  <a class="boton boton-secundario" href="#lanzamientos">Ver lanzamientos</a>
+                </div>
+              </div>
+              <div class="banner-visual banner-cursos" aria-hidden="true">
+                <article class="ficha-viva flota-a">
+                  <p class="micro"><span class="punto" data-acento="bim"></span>15 Enero</p>
+                  <p class="ficha-nombre">Revit Architecture</p>
+                  <p class="dato ficha-precio">$290.00 USD</p>
+                </article>
+                <article class="ficha-viva flota-b">
+                  <p class="micro"><span class="punto" data-acento="ingenieria"></span>22 Enero</p>
+                  <p class="ficha-nombre">AutoCAD 2D/3D</p>
+                  <p class="dato ficha-precio">$290.00 USD</p>
+                </article>
+                <article class="ficha-viva flota-c">
+                  <p class="micro"><span class="punto" data-acento="manufactura"></span>05 Febrero</p>
+                  <p class="ficha-nombre">Navisworks Manage</p>
+                  <p class="dato ficha-precio">$290.00 USD</p>
+                </article>
+              </div>
+            </div>
+          </article>
+
+          <article class="banner banner-foto banner-izq" aria-hidden="true">
+            <picture>
+              <source media="(max-width: 700px)" srcset="img/banners/banner-3.mobile.png">
+              <img class="banner-fondo" src="img/banners/Banner-3-desk.png" alt="">
+            </picture>
+            <div class="contenedor banner-interior">
+              <div class="banner-copia">
+                <p class="etiqueta">Metodología AEC</p>
+                <h2 class="banner-titulo">Construye el futuro con BIM</h2>
+                <p class="subtitulo">Conecta diseño, información y coordinación.</p>
+                <p class="banner-texto">Un flujo de trabajo integrado, del concepto a la obra, con estándares internacionales y clases en vivo.</p>
+                <div class="acciones">
+                  <a class="boton" href="#bim">Ver la metodología</a>
+                  <a class="boton boton-secundario" href="#calendario">Próximas fechas</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="banners-barra">
+        <div class="contenedor banners-barra-interior">
+          <div class="banners-puntos" role="tablist" aria-label="Elegir banner">
+            <button class="banner-punto activo" type="button" role="tab" data-banner="0" aria-selected="true" aria-label="Banner 1: cursos certificados"></button>
+            <button class="banner-punto" type="button" role="tab" data-banner="1" aria-selected="false" aria-label="Banner 2: nuevos lanzamientos"></button>
+            <button class="banner-punto" type="button" role="tab" data-banner="2" aria-selected="false" aria-label="Banner 3: futuro con BIM"></button>
+          </div>
+          <div class="controles" role="group" aria-label="Mover banners">
+            <button class="control" type="button" data-banner-prev aria-label="Banner anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+            </button>
+            <button class="control" type="button" data-banner-next aria-label="Banner siguiente">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <p class="sr" id="banners-aviso" aria-live="polite"></p>
+    </section>
+
+    <section id="instituto" class="seccion barra-atributos" aria-roledescription="carrusel" aria-label="Atributos del instituto">
+      <div class="contenedor atributos-marco">
+        <button class="control" type="button" data-cinta="-1" aria-label="Anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <div class="atributos-ventana">
+          <ul class="atributos" id="cinta-atributos">
+            <li class="atributo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="9" r="4.5"/>
+                <path d="M9.2 13.2L8 20l4-1.8L16 20l-1.2-6.8"/>
+              </svg>
+              <p class="atributo-titulo">Centro Autorizado</p>
+              <p>Autodesk Training Center</p>
+            </li>
+            <li class="atributo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                <rect x="5" y="3.5" width="14" height="17" rx="1"/>
+                <path d="M8 8.5h8M8 12.5h8M8 16.5h5"/>
+              </svg>
+              <p class="atributo-titulo">Certificación</p>
+              <p>Reconocimiento Global</p>
+            </li>
+            <li class="atributo atributo-simple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="12" rx="1"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+              <p class="atributo-titulo">CLASES ONLINE EN VIVO</p>
+            </li>
+            <li class="atributo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 21s6.5-5.6 6.5-10.2a6.5 6.5 0 1 0-13 0C5.5 15.4 12 21 12 21z"/>
+                <circle cx="12" cy="10.5" r="2"/>
+              </svg>
+              <p class="atributo-titulo">Sede Principal</p>
+              <p>Florida, USA</p>
+            </li>
+          </ul>
+        </div>
+        <button class="control" type="button" data-cinta="1" aria-label="Siguiente">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <section id="areas" class="seccion seccion-gris-1">
+      <div class="contenedor bloque-carrusel" data-bloque="areas">
+        <div class="cabecera-fila">
+          <header>
+            <h2>ÁREAS DE ESPECIALIZACIÓN</h2>
+            <p class="subtitulo">Explora nuestros cursos según tu industria y área profesional</p>
+          </header>
+          <div class="controles" role="group" aria-label="Carrusel de áreas">
+            <button class="control" type="button" data-dir="-1" aria-label="Anterior" disabled>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+            </button>
+            <button class="control" type="button" data-dir="1" aria-label="Siguiente">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div id="carrusel-areas" class="carrusel" tabindex="0" aria-roledescription="carrusel" aria-label="Áreas de especialización"></div>
+      </div>
+    </section>
+
+    <section id="lanzamientos" class="seccion">
+      <div class="contenedor bloque-carrusel" data-bloque="lanzamientos">
+        <div class="cabecera-fila">
+          <header>
+            <h2>NUEVOS LANZAMIENTOS</h2>
+            <p class="subtitulo">Explora nuevas tecnologías y amplía tus posibilidades.</p>
+          </header>
+          <div class="controles" role="group" aria-label="Carrusel de lanzamientos">
+            <button class="control" type="button" data-dir="-1" aria-label="Anterior" disabled>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+            </button>
+            <button class="control" type="button" data-dir="1" aria-label="Siguiente">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div id="carrusel-lanzamientos" class="carrusel" tabindex="0" aria-roledescription="carrusel" aria-label="Nuevos lanzamientos"></div>
+      </div>
+    </section>
+
+    <section id="calendario" class="seccion seccion-gris-2">
+      <div class="contenedor">
+        <header class="seccion-cabecera">
+          <h2>Calendario de Cursos</h2>
+          <p class="subtitulo">Encuentra las próximas fechas de inicio.</p>
+        </header>
+        <div id="lista-calendario"></div>
+      </div>
+    </section>
+
+    <section id="formacion" class="seccion">
+      <div class="contenedor">
+        <header class="seccion-cabecera">
+          <h2>FORMACIÓN AVANZADA</h2>
+          <p class="subtitulo">Complementa tu perfil con herramientas de vanguardia.</p>
+        </header>
+        <div id="lista-formacion" class="rejilla-formacion"></div>
+      </div>
+    </section>
+
+    <section id="bim" class="seccion seccion-gris-1">
+      <div class="contenedor" id="bim-contenido"></div>
+    </section>
+
+    <section id="cierre" class="seccion seccion-gris-2">
+      <div class="contenedor cierre">
+        <div class="cierre-copia">
+          <p class="etiqueta">Impulsa tu carrera hoy</p>
+          <h2>IMPULSA TUS HABILIDADES. AMPLÍA TUS OPORTUNIDADES.</h2>
+        </div>
+        <div class="cierre-acciones">
+          <button class="boton" type="button" data-panel="asesor">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 16.5V8a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9.5L6 18.5z"/>
+            </svg>
+            Hablar con un asesor
+          </button>
+          <button class="boton boton-secundario" type="button" data-accion="catalogo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 4v10M8 10l4 4 4-4M5 19h14"/>
+            </svg>
+            Descargar catálogo
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie-interior">
+        <a class="logo" href="#inicio">
+          <img src="img/LOGO%20ARTS.png" alt="Arts Digital Institute" width="2250" height="1162">
+        </a>
+        <nav class="pie-nav" aria-label="Legal y soporte">
+          <button type="button" data-legal="Políticas de Privacidad">Políticas de Privacidad</button>
+          <button type="button" data-legal="Términos del Servicio">Términos del Servicio</button>
+          <button type="button" data-legal="Soporte">Soporte</button>
+        </nav>
+      </div>
+      <p class="legal">© 2024 Arts Digital Institute. Autodesk Authorized Training Center. Florida, USA.</p>
+    </div>
+  </footer>
+
+  <dialog id="panel" class="panel" aria-labelledby="panel-titulo">
+    <div class="panel-cabecera">
+      <h2 id="panel-titulo"></h2>
+      <button class="icono-boton" type="button" data-cerrar aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+      </button>
+    </div>
+    <div id="panel-cuerpo" class="panel-cuerpo"></div>
+  </dialog>
+
+  <p id="avisos" class="sr" aria-live="polite"></p>
+
+  <script src="js/contenido.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
