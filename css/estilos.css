@@ -10,6 +10,7 @@
   --rojo-hover: #932140;
   --rojo-activo: #992341;
   --acento-bim: #1858a8;
+  --acento-sketchup: #005f9e;
   --acento-ingenieria: #6b4c9a;
   --acento-manufactura: #c8960e;
   --fuente: "Poppins", sans-serif;
@@ -108,11 +109,15 @@ svg {
 }
 
 .seccion-gris-1 {
-  background: var(--gris-1);
+  background: #e0e4e8;
+}
+
+#areas {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.16) 38%, #ffffff 100%);
 }
 
 .seccion-gris-2 {
-  background: var(--gris-2);
+  background: #d7d9d7;
 }
 
 .seccion h2,
@@ -936,6 +941,15 @@ svg {
   margin: 0;
   padding: 14px 20px;
   color: #ffffff;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+@media (min-width: 1040px) {
+  .tarjeta-area h3 {
+    padding: 12px 14px;
+    font-size: 15px;
+  }
 }
 
 .tarjeta-area[data-acento="bim"] {
@@ -944,6 +958,14 @@ svg {
 
 .tarjeta-area[data-acento="bim"] h3 {
   background: var(--acento-bim);
+}
+
+.tarjeta-area[data-acento="sketchup"] {
+  border-top-color: var(--acento-sketchup);
+}
+
+.tarjeta-area[data-acento="sketchup"] h3 {
+  background: var(--acento-sketchup);
 }
 
 .tarjeta-area[data-acento="ingenieria"] {
@@ -1139,22 +1161,41 @@ svg {
 .tarjeta-formacion {
   display: flex;
   flex-direction: column;
-  border-top: 6px solid var(--gris-3);
+  padding: 0 0 20px;
+  overflow: hidden;
 }
 
-.tarjeta-formacion[data-acento="bim"] {
-  border-top-color: var(--acento-bim);
+.tarjeta-formacion img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 18px solid var(--gris-3);
 }
 
-.tarjeta-formacion[data-acento="ingenieria"] {
-  border-top-color: var(--acento-ingenieria);
+.tarjeta-formacion[data-acento="bim"] img {
+  border-bottom-color: var(--acento-bim);
 }
 
-.tarjeta-formacion[data-acento="manufactura"] {
-  border-top-color: var(--acento-manufactura);
+.tarjeta-formacion[data-acento="ingenieria"] img {
+  border-bottom-color: var(--acento-ingenieria);
+}
+
+.tarjeta-formacion[data-acento="manufactura"] img {
+  border-bottom-color: var(--acento-manufactura);
+}
+
+.tarjeta-formacion .sigla,
+.tarjeta-formacion h3,
+.tarjeta-formacion .texto,
+.tarjeta-formacion .boton {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .sigla {
+  margin-top: 18px;
   margin-bottom: 12px;
   font-size: 13px;
   font-weight: 600;
@@ -1185,6 +1226,10 @@ svg {
 .info-cabecera .subtitulo {
   margin-right: auto;
   margin-left: auto;
+}
+
+#bim .contenedor {
+  width: min(var(--ancho), calc(100% - 192px));
 }
 
 .info-riel {
@@ -1223,21 +1268,22 @@ svg {
   place-items: center;
   width: var(--info-circulo);
   height: var(--info-circulo);
+  border: 2px solid currentColor;
   border-radius: 50%;
-  background: var(--acento-bim);
-  color: #ffffff;
+  background: transparent;
+  color: var(--acento-bim);
 }
 
 .info-circulo[data-acento="bim"] {
-  background: var(--acento-bim);
+  color: var(--acento-bim);
 }
 
 .info-circulo[data-acento="ingenieria"] {
-  background: var(--acento-ingenieria);
+  color: var(--acento-ingenieria);
 }
 
 .info-circulo[data-acento="manufactura"] {
-  background: var(--acento-manufactura);
+  color: var(--acento-manufactura);
 }
 
 .info-circulo svg {
@@ -1519,6 +1565,10 @@ svg {
   .info-nodo p {
     font-size: 13px;
   }
+
+  #bim .contenedor {
+    width: min(var(--ancho), calc(100% - 192px));
+  }
 }
 
 @media (max-width: 800px) {
@@ -1560,6 +1610,10 @@ svg {
     width: min(var(--ancho), calc(100% - 32px));
   }
 
+  #bim .contenedor {
+    width: min(var(--ancho), calc(100% - 48px));
+  }
+
   .seccion {
     padding: 56px 0;
   }
@@ -1573,14 +1627,24 @@ svg {
     align-content: start;
     height: 100%;
     min-height: 0;
-    gap: 12px;
-    padding: 16px 0 46px;
+    gap: 20px;
+    padding: 40px 20px 56px;
     overflow: hidden;
+  }
+
+  .banner .etiqueta {
+    margin-bottom: 16px;
   }
 
   .banner .subtitulo,
   .banner-texto {
-    margin-top: 6px;
+    margin-top: 16px;
+    line-height: 1.55;
+  }
+
+  .banner .acciones {
+    margin-top: 24px;
+    gap: 12px;
   }
 
   .banner-foto .banner-fondo {
@@ -1604,15 +1668,34 @@ svg {
     grid-template-columns: 1fr;
     align-content: start;
     gap: 8px;
-    padding-bottom: 12px;
+    padding: 22px 20px 14px;
   }
 
+  .banner-claro .etiqueta {
+    margin-bottom: 6px;
+  }
+
+  .banner-claro .banner-titulo {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .banner-claro .subtitulo,
   .banner-claro .banner-texto {
-    margin-top: 4px;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.45;
   }
 
   .banner-claro .acciones {
     margin-top: 10px;
+    gap: 8px;
+  }
+
+  .banner-cursos .flota-a,
+  .banner-cursos .flota-b,
+  .banner-cursos .flota-c {
+    animation: none;
   }
 
   .banner-cursos {
@@ -1714,7 +1797,7 @@ svg {
 
   .banner-titulo {
     font-size: 26px;
-    line-height: 1.15;
+    line-height: 1.28;
     max-width: none;
   }
 

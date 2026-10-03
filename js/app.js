@@ -231,6 +231,9 @@
       var articulo = document.createElement("article");
       articulo.className = "tarjeta tarjeta-formacion";
       articulo.dataset.acento = curso.acento;
+      var foto = document.createElement("img");
+      foto.src = curso.imagen;
+      foto.alt = "";
       var sigla = document.createElement("p");
       sigla.className = "sigla";
       sigla.textContent = curso.sigla;
@@ -239,7 +242,7 @@
       var texto = document.createElement("p");
       texto.className = "texto";
       texto.textContent = curso.texto;
-      articulo.append(sigla, titulo, texto, botonCurso(id, "data-detalle", "Explorar curso →", true));
+      articulo.append(foto, sigla, titulo, texto, botonCurso(id, "data-detalle", "Explorar curso →", true));
       raiz.appendChild(articulo);
     });
   }
@@ -265,9 +268,9 @@
     ];
     var acentos = ["manufactura", "ingenieria", "bim"];
     var figuras = [
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="3.2" width="19" height="12.2" rx="1.5" stroke="#fff" stroke-width="1.6"/><path d="M8 20.2h8M12 15.4v4.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M5.8 6.6h3.6l1.2 1.3H18.2v5.2H5.8z" fill="#fff"/></svg>',
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="7" width="12.5" height="10" rx="1.6" stroke="#fff" stroke-width="1.6"/><path d="M15 10.4l6.5-3.2v9.6L15 13.6z" fill="#fff"/></svg>',
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><g transform="translate(1.5 5)"><rect width="21" height="14" rx="1" fill="#B22234"/><rect y="2" width="21" height="1.55" fill="#fff"/><rect y="5.1" width="21" height="1.55" fill="#fff"/><rect y="8.2" width="21" height="1.55" fill="#fff"/><rect y="11.3" width="21" height="1.55" fill="#fff"/><rect width="9.2" height="7.6" fill="#3C3B6E"/><circle cx="1.8" cy="1.6" r="0.42" fill="#fff"/><circle cx="3.6" cy="1.6" r="0.42" fill="#fff"/><circle cx="5.4" cy="1.6" r="0.42" fill="#fff"/><circle cx="7.2" cy="1.6" r="0.42" fill="#fff"/><circle cx="2.7" cy="3.2" r="0.42" fill="#fff"/><circle cx="4.5" cy="3.2" r="0.42" fill="#fff"/><circle cx="6.3" cy="3.2" r="0.42" fill="#fff"/><circle cx="1.8" cy="4.8" r="0.42" fill="#fff"/><circle cx="3.6" cy="4.8" r="0.42" fill="#fff"/><circle cx="5.4" cy="4.8" r="0.42" fill="#fff"/><circle cx="7.2" cy="4.8" r="0.42" fill="#fff"/></g></svg>'
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7 8.2h4.2l1.1 1.2H17v4.2H7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="7" width="11" height="10" rx="1.6" stroke="currentColor" stroke-width="1.6"/><path d="M14 10.2l6.2-3v9.6L14 13.8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3.5" width="14" height="12" rx="1.2" stroke="currentColor" stroke-width="1.6"/><path d="M8 7.2h8M8 10h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M9 15.5l3 4.2 3-4.2" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>'
     ];
 
     var lista = document.createElement("ol");
@@ -301,8 +304,9 @@
     raiz.append(cabecera, lista, cta);
   }
 
-  function crearCarrusel(raiz) {
+  function crearCarrusel(raiz, opciones) {
     var bloque = raiz.closest("[data-bloque]");
+    var porFila = (opciones && opciones.escritorio) || 3;
     var ventana = document.createElement("div");
     ventana.className = "carrusel-ventana";
     var pista = document.createElement("div");
@@ -328,7 +332,7 @@
       var ancho = ventana.clientWidth;
       if (ancho < 760) return 1;
       if (ancho < 1040) return 2;
-      return 3;
+      return porFila;
     }
 
     function limite() {
@@ -987,7 +991,7 @@
   function iniciar() {
     iniciarBanners();
     iniciarCinta();
-    var areas = crearCarrusel(document.getElementById("carrusel-areas"));
+    var areas = crearCarrusel(document.getElementById("carrusel-areas"), { escritorio: 4 });
     var lanzamientos = crearCarrusel(document.getElementById("carrusel-lanzamientos"));
     carruseles.push(areas, lanzamientos);
     pintarAreas(areas.pista);

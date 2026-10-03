@@ -11,3 +11,7 @@ _cinta*
 _logo*
 _formacion*
 _cierre*
+_*.png
+_*.js
+
+.vercel

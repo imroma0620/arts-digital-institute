@@ -56,7 +56,8 @@ window.ARTS = {
       inversion: 350,
       inversionTexto: "$350.00 USD",
       sigla: "Sk",
-      texto: "Modelado 3D intuitivo y rápido para la fase conceptual de tus proyectos arquitectónicos."
+      texto: "Modelado 3D intuitivo y rápido para la fase conceptual de tus proyectos arquitectónicos.",
+      imagen: "img/formacion/sketchup-render.jpg"
     },
     bluebeam: {
       id: "bluebeam",
@@ -81,23 +82,25 @@ window.ARTS = {
       nombre: "Lumion",
       acento: "ingenieria",
       sigla: "Lu",
-      texto: "Renderizado arquitectónico en tiempo real para dar vida y atmósfera a tus diseños."
+      texto: "Renderizado arquitectónico en tiempo real para dar vida y atmósfera a tus diseños.",
+      imagen: "img/formacion/lumion-render.jpg"
     },
     vray: {
       id: "vray",
       nombre: "V-Ray",
       acento: "manufactura",
       sigla: "Vr",
-      texto: "El estándar de la industria para renderizado fotorealista y visualización de alta gama."
+      texto: "El estándar de la industria para renderizado fotorealista y visualización de alta gama.",
+      imagen: "img/formacion/vray-render.jpg"
     }
   },
   areas: [
     { nombre: "Arquitectura", acento: "bim", imagen: "img/areas/arquitectura.png" },
     { nombre: "Ingeniería y Construcción", acento: "ingenieria", imagen: "img/areas/ingenieria.png" },
     { nombre: "Manufactura", acento: "manufactura", imagen: "img/areas/manufactura.png" },
-    { nombre: "Visualización", acento: "bim", imagen: "img/areas/visualizacion.png" },
+    { nombre: "Visualización", acento: "sketchup", imagen: "img/areas/visualizacion.png" },
     { nombre: "Diseño Interior", acento: "ingenieria", imagen: "img/areas/interior.png" },
-    { nombre: "Infraestructura", acento: "ingenieria", imagen: "img/areas/infraestructura.png" },
+    { nombre: "Infraestructura", acento: "bim", imagen: "img/areas/infraestructura.png" },
     { nombre: "Plantas Industriales", acento: "manufactura", imagen: "img/areas/plantas.png" }
   ],
   lanzamientos: [
