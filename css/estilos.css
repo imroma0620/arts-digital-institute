@@ -305,8 +305,12 @@ svg {
   width: auto;
 }
 
+.cabecera .logo img {
+  height: 45px;
+}
+
 .pie .logo img {
-  height: 64px;
+  height: 52px;
 }
 
 .nav {
@@ -922,17 +926,21 @@ svg {
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
+  height: auto;
+  aspect-ratio: 1;
   min-height: 0;
   padding: 0;
   overflow: hidden;
-  border-top: 3px solid var(--gris-3);
+  border-radius: 10px;
+  border-top-width: 1px;
 }
 
 .tarjeta-area img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  object-fit: cover;
   object-position: center;
   background: var(--gris-1);
 }
@@ -952,32 +960,16 @@ svg {
   }
 }
 
-.tarjeta-area[data-acento="bim"] {
-  border-top-color: var(--acento-bim);
-}
-
 .tarjeta-area[data-acento="bim"] h3 {
   background: var(--acento-bim);
-}
-
-.tarjeta-area[data-acento="sketchup"] {
-  border-top-color: var(--acento-sketchup);
 }
 
 .tarjeta-area[data-acento="sketchup"] h3 {
   background: var(--acento-sketchup);
 }
 
-.tarjeta-area[data-acento="ingenieria"] {
-  border-top-color: var(--acento-ingenieria);
-}
-
 .tarjeta-area[data-acento="ingenieria"] h3 {
   background: var(--acento-ingenieria);
-}
-
-.tarjeta-area[data-acento="manufactura"] {
-  border-top-color: var(--acento-manufactura);
 }
 
 .tarjeta-area[data-acento="manufactura"] h3 {
@@ -1373,8 +1365,13 @@ svg {
 
 .pie {
   padding: 40px 0;
-  background: var(--blanco);
-  border-top: 1px solid var(--gris-3);
+  background: var(--tinta);
+  color: #ffffff;
+  border-top: 0;
+}
+
+.pie :focus-visible {
+  outline-color: #ffffff;
 }
 
 .pie-interior {

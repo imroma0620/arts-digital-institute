@@ -28,7 +28,7 @@ La página es un solo archivo, index.html. Los bloques van en este orden y no se
      Fondo blanco. El título grande es:
      IMPULSA TUS HABILIDADES. AMPLÍA TUS OPORTUNIDADES.
   10. Pie
-      Logo, enlaces legales y la línea
+      Fondo negro, letras blancas. Logo blanco, enlaces legales y la línea
       © 2024 Arts Digital Institute. Autodesk Authorized Training Center. Florida, USA.
 
 El menú solo tiene dos enlaces:
@@ -49,8 +49,10 @@ estos archivos de la página:
 
 Imágenes, siempre dentro de img/:
 
-  img/logo-arts.png
-      Logo del encabezado y del pie. Fondo transparente.
+  img/logo-esquina.png
+      Logo de la esquina superior (cabecera). Fondo transparente.
+  img/logo-pie.png
+      Logo del pie, en blanco, sobre el fondo negro.
 
   img/banners/
       banner-1-escritorio.png   banner-1-movil.png
