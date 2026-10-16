@@ -65,8 +65,8 @@ Imágenes, siempre dentro de img/:
 
   img/areas/
       Una imagen por tarjeta, en este orden:
-      arquitectura.png, ingenieria.png, manufactura.png,
-      visualizacion.png, interior.png, infraestructura.png, plantas.png
+      arquitectura.jpg, ingenieria.jpg, manufactura.jpg,
+      visualizacion.jpg, interior.jpg, infraestructura.jpg, plantas.jpg
 
   img/formacion/
       sketchup-render.jpg
@@ -109,7 +109,7 @@ Colores, márgenes y fondos
     Borde         #E6E6E9
 
   Fondos de sección, como están ahora:
-    Áreas         degradado de negro arriba a blanco abajo
+    Áreas         #E0E0E0
     Calendario    gris cálido #D7D9D7
     BIM           gris claro #E0E4E8
     Formación y cierre    blanco

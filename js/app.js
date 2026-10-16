@@ -278,22 +278,25 @@
     bim.puntos.forEach(function (item, indice) {
       var paso = document.createElement("li");
       paso.className = "info-nodo";
+      paso.dataset.acento = acentos[indice];
       var circulo = document.createElement("div");
       circulo.className = "info-circulo";
-      circulo.dataset.acento = acentos[indice];
       var doc = new DOMParser().parseFromString(figuras[indice], "image/svg+xml");
       circulo.appendChild(document.importNode(doc.documentElement, true));
+      var flecha = document.createElement("span");
+      flecha.className = "info-flecha";
+      flecha.setAttribute("aria-hidden", "true");
       var tallo = document.createElement("span");
       tallo.className = "info-tallo";
       tallo.setAttribute("aria-hidden", "true");
-      var puntoLinea = document.createElement("span");
-      puntoLinea.className = "info-punto";
-      puntoLinea.setAttribute("aria-hidden", "true");
+      var ficha = document.createElement("div");
+      ficha.className = "info-ficha";
       var h = document.createElement("h3");
       h.textContent = item.titulo;
       var p = document.createElement("p");
       p.textContent = frases[indice];
-      paso.append(circulo, tallo, puntoLinea, h, p);
+      ficha.append(h, p);
+      paso.append(circulo, flecha, tallo, ficha);
       lista.appendChild(paso);
     });
 

@@ -95,13 +95,13 @@ window.ARTS = {
     }
   },
   areas: [
-    { nombre: "Arquitectura", acento: "bim", imagen: "img/areas/arquitectura.png" },
-    { nombre: "Ingeniería y Construcción", acento: "ingenieria", imagen: "img/areas/ingenieria.png" },
-    { nombre: "Manufactura", acento: "manufactura", imagen: "img/areas/manufactura.png" },
-    { nombre: "Visualización", acento: "sketchup", imagen: "img/areas/visualizacion.png" },
-    { nombre: "Diseño Interior", acento: "ingenieria", imagen: "img/areas/interior.png" },
-    { nombre: "Infraestructura", acento: "bim", imagen: "img/areas/infraestructura.png" },
-    { nombre: "Plantas Industriales", acento: "manufactura", imagen: "img/areas/plantas.png" }
+    { nombre: "Arquitectura", acento: "bim", imagen: "img/areas/arquitectura.jpg?v=5" },
+    { nombre: "Ingeniería y Construcción", acento: "ingenieria", imagen: "img/areas/ingenieria.jpg?v=2" },
+    { nombre: "Manufactura", acento: "manufactura", imagen: "img/areas/manufactura.jpg?v=5" },
+    { nombre: "Visualización", acento: "sketchup", imagen: "img/areas/visualizacion.jpg" },
+    { nombre: "Diseño Interior", acento: "ingenieria", imagen: "img/areas/interior.jpg" },
+    { nombre: "Infraestructura", acento: "bim", imagen: "img/areas/infraestructura.jpg?v=3" },
+    { nombre: "Plantas Industriales", acento: "manufactura", imagen: "img/areas/plantas.jpg" }
   ],
   lanzamientos: [
     "revit-architecture",

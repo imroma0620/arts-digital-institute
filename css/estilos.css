@@ -113,8 +113,9 @@ svg {
 }
 
 #areas {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.16) 38%, #ffffff 100%);
+  background: #e0e0e0;
 }
+
 
 .seccion-gris-2 {
   background: #d7d9d7;
@@ -910,6 +911,10 @@ svg {
   padding: 0 8px;
 }
 
+#carrusel-areas .carrusel-item {
+  padding: 8px 16px 24px;
+}
+
 .carrusel-item > * {
   width: 100%;
 }
@@ -927,12 +932,13 @@ svg {
   align-items: stretch;
   justify-content: flex-start;
   height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 3 / 4;
   min-height: 0;
   padding: 0;
   overflow: hidden;
+  border: 0;
   border-radius: 10px;
-  border-top-width: 1px;
+  box-shadow: 6px 8px 14px rgba(17, 17, 17, 0.12);
 }
 
 .tarjeta-area img {
@@ -1000,6 +1006,16 @@ svg {
 .tarjeta-curso {
   display: flex;
   flex-direction: column;
+  height: auto;
+  aspect-ratio: 1;
+  background: #e7e7e7;
+  border-color: #dcdcdc;
+}
+
+.tarjeta-curso .boton-secundario,
+.tarjeta-curso .boton-secundario:hover,
+.tarjeta-curso .boton-secundario:active {
+  background: #ffffff;
 }
 
 .tarjeta-curso h3 {
@@ -1155,6 +1171,21 @@ svg {
   flex-direction: column;
   padding: 0 0 20px;
   overflow: hidden;
+  border: 0;
+  background: var(--acento-bim);
+  color: #ffffff;
+}
+
+.tarjeta-formacion[data-acento="bim"] {
+  background: var(--acento-bim);
+}
+
+.tarjeta-formacion[data-acento="ingenieria"] {
+  background: var(--acento-ingenieria);
+}
+
+.tarjeta-formacion[data-acento="manufactura"] {
+  background: #8a640c;
 }
 
 .tarjeta-formacion img {
@@ -1163,19 +1194,7 @@ svg {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: center;
-  border-bottom: 18px solid var(--gris-3);
-}
-
-.tarjeta-formacion[data-acento="bim"] img {
-  border-bottom-color: var(--acento-bim);
-}
-
-.tarjeta-formacion[data-acento="ingenieria"] img {
-  border-bottom-color: var(--acento-ingenieria);
-}
-
-.tarjeta-formacion[data-acento="manufactura"] img {
-  border-bottom-color: var(--acento-manufactura);
+  border-bottom: 0;
 }
 
 .tarjeta-formacion .sigla,
@@ -1184,6 +1203,32 @@ svg {
 .tarjeta-formacion .boton {
   margin-left: 20px;
   margin-right: 20px;
+  color: #ffffff;
+}
+
+.tarjeta-formacion .boton,
+.tarjeta-formacion .boton:hover,
+.tarjeta-formacion .boton:active {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.tarjeta-formacion[data-acento="bim"] .boton,
+.tarjeta-formacion[data-acento="bim"] .boton:hover,
+.tarjeta-formacion[data-acento="bim"] .boton:active {
+  color: var(--acento-bim);
+}
+
+.tarjeta-formacion[data-acento="ingenieria"] .boton,
+.tarjeta-formacion[data-acento="ingenieria"] .boton:hover,
+.tarjeta-formacion[data-acento="ingenieria"] .boton:active {
+  color: var(--acento-ingenieria);
+}
+
+.tarjeta-formacion[data-acento="manufactura"] .boton,
+.tarjeta-formacion[data-acento="manufactura"] .boton:hover,
+.tarjeta-formacion[data-acento="manufactura"] .boton:active {
+  color: #8a640c;
 }
 
 .sigla {
@@ -1225,29 +1270,20 @@ svg {
 }
 
 .info-riel {
-  --info-circulo: 88px;
-  --info-tallo: 22px;
-  --info-gap: 20px;
+  --info-circulo: 64px;
+  --info-tallo: 28px;
+  --info-gap: 18px;
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--info-gap);
-  margin: 40px 0 36px;
+  margin: 36px 0 32px;
   padding: 0;
   list-style: none;
 }
 
-.info-riel::before {
-  content: "";
-  position: absolute;
-  top: calc(var(--info-circulo) + var(--info-tallo) + 4px);
-  left: calc((100% - 2 * var(--info-gap)) / 6);
-  right: calc((100% - 2 * var(--info-gap)) / 6);
-  height: 2px;
-  background: var(--tinta);
-}
-
 .info-nodo {
+  --info-color: var(--acento-bim);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1255,60 +1291,102 @@ svg {
   text-align: center;
 }
 
+.info-nodo[data-acento="manufactura"] {
+  --info-color: var(--acento-manufactura);
+}
+
+.info-nodo[data-acento="ingenieria"] {
+  --info-color: var(--acento-ingenieria);
+}
+
+.info-nodo[data-acento="bim"] {
+  --info-color: var(--acento-bim);
+}
+
 .info-circulo {
+  position: relative;
+  z-index: 4;
   display: grid;
   place-items: center;
   width: var(--info-circulo);
   height: var(--info-circulo);
-  border: 2px solid currentColor;
+  margin-bottom: -18px;
+  border: 4px solid #ffffff;
   border-radius: 50%;
-  background: transparent;
-  color: var(--acento-bim);
-}
-
-.info-circulo[data-acento="bim"] {
-  color: var(--acento-bim);
-}
-
-.info-circulo[data-acento="ingenieria"] {
-  color: var(--acento-ingenieria);
-}
-
-.info-circulo[data-acento="manufactura"] {
-  color: var(--acento-manufactura);
+  background: var(--info-color);
+  color: #ffffff;
 }
 
 .info-circulo svg {
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
+}
+
+.info-flecha {
+  position: relative;
+  z-index: 1;
+  width: calc(100% + var(--info-gap) + 16px);
+  height: 34px;
+  margin-right: calc((var(--info-gap) + 16px) * -1);
+  background: var(--info-color);
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%, 16px 50%);
+}
+
+.info-nodo:first-child .info-flecha {
+  z-index: 3;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%);
+}
+
+.info-nodo:nth-child(2) .info-flecha {
+  z-index: 2;
+}
+
+.info-nodo:last-child .info-flecha {
+  width: 100%;
+  margin-right: 0;
 }
 
 .info-tallo {
   width: 2px;
   height: var(--info-tallo);
-  background: var(--tinta);
+  background: var(--info-color);
 }
 
-.info-punto {
+.info-ficha {
   position: relative;
-  z-index: 1;
-  width: 10px;
-  height: 10px;
+  width: 100%;
+  padding: 16px 12px 14px;
+  border: 2px solid var(--info-color);
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.info-ficha::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--info-color);
   border-radius: 50%;
-  background: var(--tinta);
+  background: #ffffff;
+  transform: translateX(-50%);
 }
 
 .info-nodo h3 {
-  margin: 18px 0 8px;
-  font-size: 16px;
+  margin: 0 0 6px;
+  color: var(--info-color);
+  font-size: 15px;
   font-weight: 600;
   line-height: 1.3;
 }
 
 .info-nodo p {
-  max-width: 24ch;
-  font-size: 14px;
-  line-height: 1.45;
+  margin: 0;
+  color: var(--tinta);
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 #bim .boton {
@@ -1545,22 +1623,26 @@ svg {
   }
 
   .info-riel {
-    --info-circulo: 72px;
-    --info-tallo: 16px;
-    --info-gap: 12px;
+    --info-circulo: 48px;
+    --info-tallo: 18px;
+    --info-gap: 8px;
   }
 
   .info-circulo svg {
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .info-flecha {
+    height: 26px;
   }
 
   .info-nodo h3 {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .info-nodo p {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   #bim .contenedor {
