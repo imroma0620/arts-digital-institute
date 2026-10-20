@@ -109,7 +109,7 @@ Colores, márgenes y fondos
     Borde         #E6E6E9
 
   Fondos de sección, como están ahora:
-    Áreas         #E0E0E0
+    Áreas         degradado de negro arriba a blanco abajo
     Calendario    gris cálido #D7D9D7
     BIM           gris claro #E0E4E8
     Formación y cierre    blanco

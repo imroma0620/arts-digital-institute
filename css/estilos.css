@@ -113,7 +113,12 @@ svg {
 }
 
 #areas {
-  background: #e0e0e0;
+  background: linear-gradient(to bottom, #111111 0%, #5c5c5c 34%, #ffffff 78%);
+}
+
+#areas h2,
+#areas .subtitulo {
+  color: #ffffff;
 }
 
 
