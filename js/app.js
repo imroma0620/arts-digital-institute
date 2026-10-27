@@ -51,6 +51,13 @@
   }
 
   function botonCurso(id, atributo, texto, secundario) {
+    if (id === "autocad" && atributo === "data-reservar") {
+      var enlace = document.createElement("a");
+      enlace.className = secundario ? "boton boton-secundario" : "boton";
+      enlace.href = "curso-autocad.html";
+      enlace.textContent = texto;
+      return enlace;
+    }
     var boton = document.createElement("button");
     boton.type = "button";
     boton.className = secundario ? "boton boton-secundario" : "boton";
