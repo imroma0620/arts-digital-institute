@@ -114,7 +114,9 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(17, 17, 17, 0.62) 0%, rgba(17, 17, 17, 0.28) 46%, rgba(17, 17, 17, 0) 72%);
+  background:
+    linear-gradient(to right, #5c6e80 0%, rgba(92, 110, 128, 0) 46%),
+    linear-gradient(to left, #5c6e80 0%, rgba(92, 110, 128, 0) 46%);
 }
 
 .curso-hero .contenedor {
@@ -137,6 +139,11 @@
   line-height: 1.1;
   letter-spacing: -0.02em;
   text-shadow: 0 2px 16px rgba(17, 17, 17, 0.35);
+}
+
+.curso-hero h1 span {
+  color: #e1063a;
+  text-shadow: none;
 }
 
 .curso-hero p {
@@ -162,11 +169,17 @@
   max-width: none;
   margin: 0 0 36px;
   padding: 16px 20px;
-  background: #3f3f3f;
+  background: #495663;
   color: #ffffff;
   font-size: 22px;
   font-weight: 500;
   line-height: 1.3;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.curso-pagina .curso-puente h2 span {
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .curso-video {
@@ -184,78 +197,125 @@
   background: #111111;
 }
 
-.curso-temas h2,
-.curso-lead,
-.curso-temas h3 {
-  max-width: 22em;
-  margin-left: auto;
+.curso-temas h2 {
+  max-width: 14em;
   margin-right: auto;
-  text-align: center;
+  text-align: left;
+}
+
+.curso-temas h2::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 6px;
+  margin-bottom: 14px;
+  border-radius: 2px;
+  background: #292c37;
 }
 
 .curso-lead {
-  margin-top: 12px;
+  max-width: 36em;
+  margin-top: 14px;
   margin-bottom: 0;
-  font-size: 18px;
-  line-height: 1.4;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.55;
+  text-align: left;
 }
 
 .curso-temas h3 {
-  margin-top: 28px;
+  margin-top: 32px;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.3;
+  text-align: center;
+}
+
+.curso-tecnicas {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.curso-tecnicas li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 0 8px;
+  text-align: center;
+}
+
+.curso-tecnicas li + li {
+  border-left: 1px solid #e6e6e9;
+}
+
+.curso-tecnicas svg {
+  width: 34px;
+  height: 34px;
+  color: #8b1835;
+}
+
+.curso-tecnicas p {
+  margin: 0;
+  color: #333333;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.35;
 }
 
 .curso-flechas {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
   margin: 28px 0 0;
   padding: 0;
   list-style: none;
 }
 
 .curso-flechas li {
-  display: flex;
-  flex-direction: column;
   min-width: 0;
-  text-align: center;
 }
 
 .curso-flecha {
   position: relative;
   z-index: 1;
-  display: block;
-  width: calc(100% + 20px);
-  height: 28px;
-  margin-top: auto;
-  margin-right: -20px;
-  background: #e07a8c;
-  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 14px 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% + 16px);
+  height: 48px;
+  margin-right: -16px;
+  padding: 0 14px 0 22px;
+  background: #e7ccd5;
+  color: #27131c;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%, 16px 50%);
 }
 
 .curso-flechas li:first-child .curso-flecha {
   z-index: 3;
-  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+  padding-left: 10px;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%);
 }
 
 .curso-flechas li:nth-child(2) .curso-flecha {
   z-index: 2;
-  background: var(--rojo);
+  background: #8b1835;
+  color: #ffffff;
 }
 
 .curso-flechas li:last-child .curso-flecha {
   width: 100%;
   margin-right: 0;
-}
-
-.curso-flechas p {
-  margin: 0 0 14px;
-  color: #333333;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1.2;
+  background: #b9677e;
+  color: #ffffff;
 }
 
 #pensum {
@@ -271,7 +331,13 @@
 }
 
 .curso-ventajas {
-  background: #e0e4e8;
+  background: #292c37;
+  text-align: left;
+}
+
+.curso-pagina .curso-ventajas h2 {
+  margin: 0 0 36px;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -288,10 +354,19 @@
   gap: 16px;
 }
 
+.curso-beneficio h3 {
+  margin: 0 0 2px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
 .curso-beneficio p {
   margin: 0;
+  color: #d5d8e0;
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .curso-icono {
@@ -301,10 +376,10 @@
   flex: 0 0 64px;
   width: 64px;
   height: 64px;
-  border: 1.5px solid var(--rojo);
+  border: 1.5px solid #ffffff;
   border-radius: 50%;
   background: transparent;
-  color: var(--rojo);
+  color: #ffffff;
 }
 
 .curso-icono svg {
@@ -317,10 +392,10 @@
   top: -6px;
   right: -8px;
   padding: 1px 5px;
-  border: 1px solid var(--rojo);
+  border: 1px solid #ffffff;
   border-radius: 999px;
-  background: #ffffff;
-  color: var(--rojo);
+  background: #292c37;
+  color: #ffffff;
   font-size: 9px;
   font-style: normal;
   font-weight: 700;
@@ -329,7 +404,7 @@
 
 .curso-icono.suave {
   background: transparent;
-  color: var(--rojo);
+  color: #ffffff;
 }
 
 .curso-pagina .curso-oferta {
@@ -391,7 +466,7 @@
   min-height: 420px;
   padding: 48px 36px;
   text-align: center;
-  background: linear-gradient(to bottom, rgba(17, 17, 17, 0.22), rgba(17, 17, 17, 0.48));
+  background: linear-gradient(to bottom, #5c6e80 0%, rgba(92, 110, 128, 0.28) 100%);
 }
 
 .curso-promo-logo {
@@ -522,7 +597,8 @@
   background: var(--rojo);
 }
 
-.curso-editorial ol {
+.curso-editorial ol,
+.curso-editorial ul {
   margin: 8px 0 0;
   padding: 0;
   list-style: none;
@@ -532,8 +608,8 @@
 .curso-editorial li {
   counter-increment: nota;
   display: grid;
-  grid-template-columns: 32px 1fr;
-  gap: 8px;
+  grid-template-columns: 42px 1fr;
+  gap: 10px;
   align-items: baseline;
   padding: 18px 0;
   border-bottom: 1px solid #e6e6e9;
@@ -544,20 +620,41 @@
 .curso-editorial li::before {
   content: counter(nota, decimal-leading-zero);
   color: var(--rojo);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.curso-incluye li::before {
+  content: none;
+}
+
+.curso-marca {
+  width: 24px;
+  height: 24px;
+  margin-top: 1px;
+  color: var(--rojo);
 }
 
 .curso-aviso {
   margin: 16px 0 0;
-  color: #555555;
+  color: #d5d8e0;
   font-size: 14px;
 }
 
 .curso-pagina .curso-reserva {
   padding: 36px 0;
-  background: #d7d9d7;
+  background: #292c37;
+  color: #ffffff;
+}
+
+.curso-pagina .curso-reserva h2 {
+  color: #ffffff;
+}
+
+.curso-formulario > p,
+.curso-formulario .campo label {
+  color: #d5d8e0;
 }
 
 .curso-formulario {
@@ -584,6 +681,8 @@
 
 .curso-formulario .campo input {
   padding: 8px 12px;
+  background: #ffffff;
+  color: #111111;
 }
 
 .curso-formulario .curso-boton {
@@ -602,34 +701,93 @@
   display: none;
 }
 
+#personalizados {
+  padding: 28px 0 12px;
+  background: #ffffff;
+}
+
 .curso-extra {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 20px;
+  padding: 22px 24px;
+  border-radius: 16px;
+  background: #eef0f3;
+}
+
+.curso-pagina #personalizados h2 {
+  font-size: 22px;
+  line-height: 1.2;
 }
 
 .curso-extra p {
-  margin: 10px 0 0;
-  max-width: 40em;
-  font-size: 16px;
-  line-height: 1.5;
+  margin: 6px 0 0;
+  max-width: 36em;
+  color: #333333;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+#personalizados .curso-boton {
+  flex: none;
+  gap: 8px;
+  border-radius: 8px;
+}
+
+#personalizados .curso-boton::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  transform: rotate(45deg);
+}
+
+#relacionados {
+  padding-top: 36px;
+}
+
+.curso-pagina #relacionados h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+}
+
+.curso-pagina #relacionados h2::before {
+  content: "";
+  width: 28px;
+  height: 5px;
+  border-radius: 3px;
+  background: #292c37;
+  flex: none;
 }
 
 .curso-relacionados {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 24px;
+  gap: 14px;
+  margin-top: 18px;
 }
 
 .curso-relacionados a {
-  display: block;
-  padding: 22px;
-  border: 1px solid #e6e6e9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 92px;
+  padding: 16px 14px;
+  border: 0;
   border-radius: 12px;
-  color: #111111;
+  color: #ffffff;
   text-decoration: none;
+}
+
+.curso-relacionados svg {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
 }
 
 .curso-relacionados a[data-acento="bim"] {
@@ -651,11 +809,11 @@
 }
 
 .curso-relacionados p {
-  margin: 0 0 6px;
-  color: #666666;
-  font-size: 12px;
+  margin: 0 0 4px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -665,12 +823,14 @@
 }
 
 .curso-relacionados strong {
-  font-size: 18px;
-  font-weight: 600;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .curso-pagina .pie {
-  background: color-mix(in srgb, var(--rojo) 95%, #000000);
+  background: #495663;
   color: #ffffff;
 }
 
@@ -725,14 +885,26 @@
 
 @media (max-width: 800px) {
   .curso-beneficios,
-  .curso-oferta-layout,
-  .curso-relacionados,
-  .curso-extra {
+  .curso-oferta-layout {
     grid-template-columns: 1fr;
   }
 
-  .curso-extra {
-    display: grid;
+  .curso-beneficio h3 {
+    font-size: 16px;
+  }
+
+  .curso-beneficio p {
+    font-size: 15px;
+  }
+
+  .curso-relacionados strong {
+    font-size: 14px;
+  }
+
+  .curso-relacionados svg {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
   }
 
   .curso-hero {
